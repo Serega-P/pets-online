@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.sass'
+import { BrowserRouter } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
+import Header from './Components/Header/Header'
+import Navbar from './Components/Navbar/Navbar'
+import Content from './Components/Content/Content'
+const history = createBrowserHistory()
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+		<BrowserRouter history={history}>
+			<div className="app-wrapper">
+				<Header />
+				<Navbar />
+				<Content />
     </div>
-  );
+		</BrowserRouter> 
+  )
 }
 
-export default App;
+export default App
